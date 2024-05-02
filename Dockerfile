@@ -1,20 +1,12 @@
+# Use a Node.js Alpine base image
 FROM node:20.11.0-alpine3.18
-# Set Node.js base image.
 
-WORKDIR /usr/src/app
-# Set working directory.
+WORKDIR /app
 
-COPY package*.json ./
-# Copy package files.
+COPY package.json ./
 
 RUN npm install
-# Install dependencies.
 
 COPY . .
-# Copy application files.
-
-EXPOSE 3001
-# Expose port 3001.
 
 CMD ["npm", "start"]
-# Start application in production mode.

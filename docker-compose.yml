@@ -10,6 +10,9 @@ services:
       - 3001
     ports:
       - 3001:3001
+    environment:
+      DATABASE_URL: postgresql://${PGUSER}:${PGPASSWORD}@db:${PGPORT}/${PGDATABASE}
+    command: sh -c "npm run p:generate && npm run p:migrate && npm start"
     depends_on:
       - db  
     healthcheck:
@@ -18,7 +21,7 @@ services:
       timeout: 30s
       retries: 3
     networks:
-      - todo-network  
+      - todo-network   
 
   db:
     image:  postgres:16-alpine
