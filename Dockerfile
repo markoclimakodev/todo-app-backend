@@ -9,4 +9,8 @@ RUN npm install
 
 COPY . .
 
+RUN npm run p:generate
+
+RUN npm run p:migrate
+
 CMD ["npm", "start"]
