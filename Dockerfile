@@ -13,4 +13,6 @@ RUN npm run p:generate
 
 RUN npm run p:migrate
 
+COPY . .
+
 CMD ["npm", "start"]
