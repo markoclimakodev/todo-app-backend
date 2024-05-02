@@ -9,10 +9,12 @@ RUN npm install
 
 COPY . .
 
+ARG DATABASE_URL
+
+RUN DATABASE_URL=$DATABASE_URL 
+
 RUN npm run p:generate
 
 RUN npm run p:migrate
-
-COPY . .
 
 CMD ["npm", "start"]
