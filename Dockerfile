@@ -17,4 +17,6 @@ RUN npm run p:generate
 
 RUN npm run p:migrate
 
+RUN npm run build
+
 CMD ["npm", "start"]
