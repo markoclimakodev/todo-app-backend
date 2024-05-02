@@ -1,0 +1,15 @@
+# Railway Project Configuration
+
+name = "nome-do-seu-projeto"
+
+[env.production]
+  secrets = { DATABASE_URL = "@cocktail/file" }
+
+[env.staging]
+  secrets = { DATABASE_URL = "@cocktail/file" }
+  buildCommand = "npm run build"
+  startCommand = "npm start"
+  postDeploy = ["npm run p:generate", "npm run p:migrate"]
+
+[services.web]
+  port = 3000
