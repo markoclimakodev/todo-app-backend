@@ -2,10 +2,11 @@
   "name": "todo-app-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "build/server.js",
+  "main": "server.js",
   "scripts": {
     "build": "tsc",
-    "start": "tsc  && node build/server.js",
+    "watch":"tsc -w",
+    "start": "node build/server.js",
     "start:dev": "tsx --watch src/server.ts",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint --fix . --ext .ts",
